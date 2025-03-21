@@ -1,0 +1,18 @@
+services:
+  service-frontend-react:
+    build:
+      context: ./react
+    command: tail -f /dev/null
+    user: node
+    volumes:
+      - ~/.ssh:/home/node/.ssh:ro
+      - .:/mnt/repo:rw
+      - .git:/app/.git:rw
+      - ./react/src:/app:rw
+      - ./volumes/cypress-cache:/home/node/.cache/Cypress
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - XAUTHORITY=/tmp/.Xauthority
+      - DISPLAY
+      - GIT_DIR=/app/.git
+      - GIT_WORK_TREE=/mnt/repo
