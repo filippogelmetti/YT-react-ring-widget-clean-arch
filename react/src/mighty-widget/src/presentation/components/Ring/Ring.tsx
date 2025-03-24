@@ -1,21 +1,10 @@
-import { useEffect, useState } from "react";
-import { WifiNode } from "@/domain/models/WifiNode";
-import { LoadWifiNodesUseCase } from "@/application/usecases/LoadWifiNodesUseCase";
+import { NodesContext } from "@/presentation/contexts/NodeContext";
+import { useContext } from "react";
 import RingNode from "../RingNode/RingNode";
 import "./Ring.scss";
 
 const Ring = () => {
-  const [wifiNodes, setWifiNodes] = useState<WifiNode[]>([]);
-
-  useEffect(() => {
-    const loadWifiNodes = async () => {
-      const nodes = await new LoadWifiNodesUseCase().execute();
-      setWifiNodes(nodes);
-    };
-
-    loadWifiNodes();
-  }, []);
-
+  const { wifiNodes } = useContext(NodesContext);
   return (
     <>
       <svg

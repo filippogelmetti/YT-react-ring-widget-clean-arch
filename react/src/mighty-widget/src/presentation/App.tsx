@@ -1,9 +1,12 @@
 import Ring from "@/presentation/components/Ring/Ring";
+import { NodesProvider } from "@/presentation/contexts/NodeContext";
 
 function App() {
   return (
     <>
-      <Ring />
+      <NodesProvider>
+        <Ring />
+      </NodesProvider>
     </>
   );
 }
