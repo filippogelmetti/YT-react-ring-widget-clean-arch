@@ -1,0 +1,15 @@
+.ring-node {
+  cursor: pointer;
+  .ring-node-border {
+    fill: grey;
+  }
+  .ring-node-core {
+    fill: black;
+  }
+}
+
+.ring-node.selected {
+  .ring-node-border {
+    fill: orange;
+  }
+}
