@@ -1,5 +1,4 @@
-import "./App.scss";
-import Ring from "./components/Ring/Ring";
+import Ring from "@/presentation/components/Ring/Ring";
 
 function App() {
   return (
