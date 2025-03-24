@@ -9,16 +9,21 @@ interface NodesProviderProps {
 
 interface NodesContextType {
   wifiNodes: WifiNode[];
+  selectedNode: WifiNode | undefined;
+  setSelectedNode: (node: WifiNode) => void;
 }
 
 export const NodesContext = createContext<NodesContextType>({
   wifiNodes: [],
+  selectedNode: undefined,
+  setSelectedNode: () => {},
 });
 
 export const NodesProvider: React.FC<NodesProviderProps> = ({
   children,
   loadWifiNodesUseCase,
 }) => {
+  const [selectedNode, setSelectedNode] = useState<WifiNode>();
   const [wifiNodes, setWifiNodes] = useState<WifiNode[]>([]);
 
   useEffect(() => {
@@ -34,6 +39,8 @@ export const NodesProvider: React.FC<NodesProviderProps> = ({
     <NodesContext.Provider
       value={{
         wifiNodes,
+        selectedNode,
+        setSelectedNode,
       }}
     >
       {children}
