@@ -1,4 +1,4 @@
-import { WifiNode } from "../../domain/models/WifiNode";
+import { WifiNode } from "@/domain/models/WifiNode";
 
 export class LoadWifiNodesUseCase {
   constructor() {}

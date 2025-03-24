@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { WifiNode } from "../../domain/models/WifiNode";
+import { WifiNode } from "@/domain/models/WifiNode";
+import { LoadWifiNodesUseCase } from "@/application/usecases/LoadWifiNodesUseCase";
 import RingNode from "../RingNode/RingNode";
 import "./Ring.scss";
-import { LoadWifiNodesUseCase } from "../../application/usecases/LoadWifiNodesUseCase";
 
 const Ring = () => {
   const [wifiNodes, setWifiNodes] = useState<WifiNode[]>([]);
