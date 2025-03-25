@@ -1,5 +1,6 @@
 import { WifiDevice } from "@/domain/models/WifiDevice";
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
+import { NodesContext } from "./NodeContext";
 
 interface DevicesContextType {
   wifiDevices: WifiDevice[];
@@ -19,18 +20,15 @@ export const DevicesProvider: React.FC<any> = ({
 }) => {
   const [selectedDevice, setSelectedDevice] = useState();
   const [wifiDevices, setWifiDevices] = useState([]);
-
-  console.log("🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝");
-  console.log(wifiDevices);
+  const { selectedNode } = useContext(NodesContext);
 
   useEffect(() => {
     const loadWifiDevices = async () => {
-      const devices = await loadWifiDevicesUseCase.execute();
+      const devices = await loadWifiDevicesUseCase.execute(selectedNode?.SSID);
       setWifiDevices(devices);
     };
-
     loadWifiDevices();
-  }, []);
+  }, [selectedNode]);
 
   return (
     <DevicesContext.Provider
