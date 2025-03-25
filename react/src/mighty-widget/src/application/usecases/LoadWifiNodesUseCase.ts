@@ -10,21 +10,21 @@ export class LoadWifiNodesUseCase {
         Band: "5GHz",
         Encryption: ["WPA2-PSK"],
         SSID: "WiFi-5E7D61",
-        "Signal Strength": -28,
+        SignalStrength: -28,
       },
       {
         BSSID: "22:b0:01:d6:fb:69:",
         Band: "5GHz",
         Encryption: ["WPA2-PSK"],
         SSID: "Vodafone5G-6FB60",
-        "Signal Strength": -70,
+        SignalStrength: -70,
       },
       {
         BSSID: "8c:90:2d:4e:46:d6:",
-        Band: "5GHz",
-        Encryption: ["WPA2-PSK"],
+        Band: "2.5GHz",
+        Encryption: ["Open"],
         SSID: "WiFi-4E46D4_5G",
-        "Signal Strength": -81,
+        SignalStrength: -81,
       },
     ];
   }

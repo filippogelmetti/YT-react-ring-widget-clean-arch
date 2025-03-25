@@ -3,5 +3,5 @@ export interface WifiNode {
   Band: string;
   Encryption: [string];
   SSID: string;
-  "Signal Strength": number;
+  SignalStrength: number;
 }
