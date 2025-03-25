@@ -1,0 +1,27 @@
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+
+  grid-template-areas:
+    "first"
+    "second";
+
+  .first-cell {
+    grid-area: first;
+  }
+
+  .second-cell {
+    grid-area: second;
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "first second";
+  }
+}

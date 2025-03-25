@@ -6,8 +6,15 @@ const Dashboard = () => {
   return (
     <>
       <div>Dashboard</div>
-      <Ring />
-      <NodeDetail />
+      <div className="dashboard-container">
+        <div className="first-cell">
+          <Ring />
+        </div>
+        |
+        <div className="second-cell">
+          <NodeDetail />
+        </div>
+      </div>
     </>
   );
 };
