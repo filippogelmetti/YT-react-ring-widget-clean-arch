@@ -9,10 +9,16 @@ const Dashboard = () => {
       <div className="dashboard-container">
         <div className="first-cell">
           <Ring />
-        </div>
+        </div>{" "}
         |
         <div className="second-cell">
           <NodeDetail />
+        </div>
+        <div className="third-cell">
+          <h2>List of devices: 💻🖥️⌨️🖨️</h2>
+        </div>
+        <div className="forth-cell">
+          <h2>Device details:</h2>
         </div>
       </div>
     </>

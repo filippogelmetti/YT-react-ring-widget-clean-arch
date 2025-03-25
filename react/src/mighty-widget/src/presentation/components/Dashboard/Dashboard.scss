@@ -10,7 +10,9 @@
 
   grid-template-areas:
     "first"
-    "second";
+    "second"
+    "third"
+    "forth";
 
   .first-cell {
     grid-area: first;
@@ -20,8 +22,19 @@
     grid-area: second;
   }
 
+  .third-cell {
+    grid-area: third;
+  }
+
+  .forth-cell {
+    grid-area: forth;
+  }
+
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "first second";
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "first second"
+      "third forth";
   }
 }
