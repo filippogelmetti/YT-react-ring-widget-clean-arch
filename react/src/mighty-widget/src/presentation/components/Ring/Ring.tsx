@@ -13,18 +13,16 @@ const Ring = () => {
         height="600"
         className="ring-container"
       >
-        <g>
-          {wifiNodes.map((node, i) => {
-            const angle = (i / wifiNodes.length) * 2 * Math.PI;
-            const x = 300 + 250 * Math.cos(angle);
-            const y = 300 + 250 * Math.sin(angle);
-            return (
-              <g key={i}>
-                <RingNode node={node} x={x} y={y} />
-              </g>
-            );
-          })}
-        </g>
+        {wifiNodes.map((node, i) => {
+          const angle = (i / wifiNodes.length) * 2 * Math.PI;
+          const x = 300 + 250 * Math.cos(angle);
+          const y = 300 + 250 * Math.sin(angle);
+          return (
+            <g key={i}>
+              <RingNode node={node} x={x} y={y} />
+            </g>
+          );
+        })}
       </svg>
     </>
   );
