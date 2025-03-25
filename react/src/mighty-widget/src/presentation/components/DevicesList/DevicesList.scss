@@ -1,0 +1,11 @@
+.devices-list {
+  .device-item {
+    border: 1px solid white;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .device-item:hover {
+    color: black;
+    background-color: #f0f0f0;
+  }
+}
