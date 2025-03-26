@@ -5,6 +5,10 @@ export default defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    specPattern: "cypress/e2e/**/*.{cy,spec}.{js,jsx,ts,tsx}",
+    specPattern: "src/__tests__/cypress/**/*.{js,jsx,ts,tsx}",
+    supportFile: "src/__tests__/cypress/support/e2e.ts",
+    videosFolder: "src/__tests__/cypress/videos",
+    screenshotsFolder: "src/__tests__/cypress/screenshots",
+    fixturesFolder: "src/__tests__/cypress/fixtures",
   },
 });
