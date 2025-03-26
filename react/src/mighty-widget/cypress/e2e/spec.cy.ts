@@ -22,4 +22,9 @@ describe("Dashboard", () => {
       "Select a device to view details"
     );
   });
+
+  it("should display node details when a node is selected", () => {
+    cy.get(".ring-node").first().click();
+    cy.get(".node-details-cell").should("contain", "WiFi-5E7D61");
+  });
 });
