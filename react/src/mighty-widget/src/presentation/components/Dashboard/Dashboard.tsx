@@ -9,17 +9,17 @@ const Dashboard = () => {
     <>
       <div>Dashboard</div>
       <div className="dashboard-container">
-        <div className="first-cell">
+        <div className="ring-cell">
           <Ring />
         </div>
-        <div className="second-cell">
+        <div className="node-details-cell">
           <NodeDetail />
         </div>
-        <div className="third-cell">
+        <div className="devices-list-cell">
           <h2>List of devices: 💻🖥️⌨️🖨️</h2>
           <DevicesList />
         </div>
-        <div className="forth-cell">
+        <div className="device-details-cell">
           <h2>Device details:</h2>
           <DeviceDetails />
         </div>

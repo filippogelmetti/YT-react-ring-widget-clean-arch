@@ -9,32 +9,32 @@
   width: 100%;
 
   grid-template-areas:
-    "first"
-    "second"
-    "third"
-    "forth";
+    "ring"
+    "node-details"
+    "devices-list"
+    "device-details";
 
-  .first-cell {
-    grid-area: first;
+  .ring-cell {
+    grid-area: ring;
   }
 
-  .second-cell {
-    grid-area: second;
+  .node-details-cell {
+    grid-area: node-details;
   }
 
-  .third-cell {
-    grid-area: third;
+  .devices-list-cell {
+    grid-area: devices-list;
   }
 
-  .forth-cell {
-    grid-area: forth;
+  .device-details-cell {
+    grid-area: device-details;
   }
 
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     grid-template-areas:
-      "first second"
-      "third forth";
+      "ring node-details"
+      "devices-list device-details";
   }
 }

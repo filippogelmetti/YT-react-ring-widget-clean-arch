@@ -30,7 +30,7 @@ const NodeDetail = () => {
           </div>
         ) : (
           <div>
-            <p>No nodes selected</p>
+            <p>No node selected</p>
           </div>
         )}
       </div>

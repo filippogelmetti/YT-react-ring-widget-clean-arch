@@ -7,8 +7,8 @@ const DevicesList = () => {
 
   return (
     <>
-      DevicesList
       <div className="devices-list">
+        {wifiDevices.length === 0 && <div>No devices</div>}
         {wifiDevices.map((device, i) => (
           <div
             className="device-item"
