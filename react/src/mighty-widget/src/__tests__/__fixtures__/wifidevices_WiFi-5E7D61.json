@@ -1,0 +1,14 @@
+[
+  {
+    "Hostname": "VX220-G2V",
+    "IP": "192.168.1.1",
+    "MAC": "22:87:2a:5e:7d:ff",
+    "Vendor": "TP-Link"
+  },
+  {
+    "Hostname": "host.docker.internal",
+    "IP": "192.168.1.96",
+    "MAC": "63:1d:e7:44:86:ef",
+    "Vendor": "Unknown"
+  }
+]

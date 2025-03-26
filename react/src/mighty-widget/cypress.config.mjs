@@ -9,6 +9,6 @@ export default defineConfig({
     supportFile: "src/__tests__/cypress/support/e2e.ts",
     videosFolder: "src/__tests__/cypress/videos",
     screenshotsFolder: "src/__tests__/cypress/screenshots",
-    fixturesFolder: "src/__tests__/cypress/fixtures",
+    fixturesFolder: "src/__tests__/__fixtures__",
   },
 });
