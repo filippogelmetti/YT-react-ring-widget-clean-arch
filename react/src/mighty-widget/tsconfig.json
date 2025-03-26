@@ -4,9 +4,21 @@
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ],
+  "include": ["src/**/*.ts", "cypress/**/*.ts", "cypress.config.ts"],
   "compilerOptions": {
     "baseUrl": "./",
-    "types": ["cypress"],
+    "composite": true,
+    "outDir": "./dist",
+    "declaration": true,
+    "types": ["cypress", "jest", "node"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "jsx": "react-jsx", // Or "react" if not using React 17+
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "paths": {
       "@/*": ["src/*"],
       "@/domain/*": ["src/domain/*"],
