@@ -9,8 +9,8 @@ interface RingNodeProps {
 }
 
 const RingNode: React.FC<RingNodeProps> = ({ node, x, y }) => {
-  const { selectedNode, setSelectedNode } = useContext(NodesContext);
-  const isSelected = selectedNode && selectedNode.SSID === node.SSID;
+  const { setSelectedNode, isNodeSelected } = useContext(NodesContext);
+  const isSelected = isNodeSelected(node);
 
   return (
     <>

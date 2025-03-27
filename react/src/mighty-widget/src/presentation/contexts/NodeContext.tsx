@@ -11,12 +11,14 @@ interface NodesContextType {
   wifiNodes: WifiNode[];
   selectedNode: WifiNode | undefined;
   setSelectedNode: (node: WifiNode) => void;
+  isNodeSelected: (node: WifiNode) => boolean;
 }
 
 export const NodesContext = createContext<NodesContextType>({
   wifiNodes: [],
   selectedNode: undefined,
   setSelectedNode: () => {},
+  isNodeSelected: () => false,
 });
 
 export const NodesProvider: React.FC<NodesProviderProps> = ({
@@ -35,12 +37,17 @@ export const NodesProvider: React.FC<NodesProviderProps> = ({
     loadWifiNodes();
   }, []);
 
+  const isNodeSelected = (node: WifiNode) => {
+    return selectedNode ? selectedNode.BSSID === node.BSSID : false;
+  };
+
   return (
     <NodesContext.Provider
       value={{
         wifiNodes,
         selectedNode,
         setSelectedNode,
+        isNodeSelected,
       }}
     >
       {children}
