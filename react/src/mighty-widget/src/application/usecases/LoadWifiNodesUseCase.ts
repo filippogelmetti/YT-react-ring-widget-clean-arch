@@ -4,28 +4,33 @@ export class LoadWifiNodesUseCase {
   constructor() {}
 
   async execute(): Promise<WifiNode[]> {
-    return [
-      {
-        BSSID: "28:87:ba:5e:7d:63:",
-        Band: "5GHz",
-        Encryption: ["WPA2-PSK"],
-        SSID: "WiFi-5E7D61",
-        SignalStrength: -28,
-      },
-      {
-        BSSID: "22:b0:01:d6:fb:69:",
-        Band: "5GHz",
-        Encryption: ["WPA2-PSK"],
-        SSID: "Vodafone5G-6FB60",
-        SignalStrength: -70,
-      },
-      {
-        BSSID: "8c:90:2d:4e:46:d6:",
-        Band: "2.5GHz",
-        Encryption: ["Open"],
-        SSID: "WiFi-4E46D4_5G",
-        SignalStrength: -81,
-      },
-    ];
+    try {
+      // Fetch the WiFi nodes from the API
+      const response = await fetch("http://192.168.1.96:8989/scan_wifi");
+      if (!response.ok) {
+        throw new Error(`API request failed with status ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      // Map API data to WifiNode format
+      const wifiNodes: WifiNode[] = data.map((network: any) => {
+        const wifiNode: WifiNode = {
+          BSSID: network.BSSID,
+          Band: network.Band,
+          Encryption: network.Encryption,
+          SSID: network.SSID,
+          SignalStrength: network["Signal Strength"],
+          devices: [], // Empty devices array for now
+        };
+
+        return wifiNode;
+      });
+
+      return wifiNodes;
+    } catch (error) {
+      console.error("Error fetching WiFi nodes:", error);
+      return []; // Return an empty array in case of error
+    }
   }
 }
