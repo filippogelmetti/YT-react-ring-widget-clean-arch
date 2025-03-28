@@ -30,8 +30,8 @@ export class LoadWifiDevicesUseCase {
 
       return wifiDevices;
     } catch (error) {
-      console.error("Error fetching WiFi devices:", error);
-      return []; // Return an empty array in case of error
+      //console.error("Error fetching WiFi devices:", error);
+      throw error;
     }
   }
 }
