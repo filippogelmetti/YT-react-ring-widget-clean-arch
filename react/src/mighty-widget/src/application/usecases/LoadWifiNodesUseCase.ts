@@ -29,8 +29,8 @@ export class LoadWifiNodesUseCase {
 
       return wifiNodes;
     } catch (error) {
-      console.error("Error fetching WiFi nodes:", error);
-      return []; // Return an empty array in case of error
+      //console.error("Error fetching WiFi nodes:", error);
+      throw error;
     }
   }
 }
