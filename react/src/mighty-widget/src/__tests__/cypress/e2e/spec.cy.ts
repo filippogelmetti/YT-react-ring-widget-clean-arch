@@ -1,6 +1,19 @@
+// @ts-ignore
+import { Chainable } from "cypress";
+
+const API_URL = "http://192.168.1.96:8989";
+const APP_URL = "http://localhost:5173";
+const WIFI_IDS = ["28:87:ba:5e:7d:61:", "28:87:ba:5e:7d:63:"];
+
 describe("Dashboard", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:5173");
+    cy.intercept("GET", `${API_URL}/scan_wifis`, { fixture: "wifinodes.json" });
+    WIFI_IDS.forEach((wifiId) => {
+      cy.intercept("GET", `${API_URL}/scan_devices?bssid=${wifiId}`, {
+        fixture: `wifidevices_${wifiId}.json`,
+      });
+    });
+    cy.visit(APP_URL);
   });
 
   it("should display the dashboard title", () => {

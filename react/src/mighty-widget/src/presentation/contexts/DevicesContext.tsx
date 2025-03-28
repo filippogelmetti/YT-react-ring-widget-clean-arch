@@ -23,11 +23,15 @@ export const DevicesProvider: React.FC<any> = ({
   const { selectedNode } = useContext(NodesContext);
 
   useEffect(() => {
-    const loadWifiDevices = async () => {
-      const devices = await loadWifiDevicesUseCase.execute(selectedNode?.BSSID);
-      setWifiDevices(devices);
-    };
-    loadWifiDevices();
+    if (selectedNode?.BSSID) {
+      const loadWifiDevices = async () => {
+        const devices = await loadWifiDevicesUseCase.execute(
+          selectedNode?.BSSID
+        );
+        setWifiDevices(devices);
+      };
+      loadWifiDevices();
+    }
   }, [selectedNode]);
 
   return (
