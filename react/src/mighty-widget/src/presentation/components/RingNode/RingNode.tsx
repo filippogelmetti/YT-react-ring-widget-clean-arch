@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import "./RingNode.scss";
 import { NodesContext } from "@/presentation/contexts/NodeContext";
+import "./RingNode.scss";
 
 interface RingNodeProps {
   node: any;
