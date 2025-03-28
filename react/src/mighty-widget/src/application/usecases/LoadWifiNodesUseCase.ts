@@ -6,7 +6,7 @@ export class LoadWifiNodesUseCase {
   async execute(): Promise<WifiNode[]> {
     try {
       // Fetch the WiFi nodes from the API
-      const response = await fetch("http://192.168.1.96:8989/scan_wifi");
+      const response = await fetch("http://192.168.1.96:8989/scan_wifis");
       if (!response.ok) {
         throw new Error(`API request failed with status ${response.status}`);
       }

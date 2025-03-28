@@ -7,7 +7,9 @@ export class LoadWifiDevicesUseCase {
     try {
       // Fetch the WiFi devices from the API
       const response = await fetch(
-        `http://192.168.1.96:8989/scan?bssid=${encodeURIComponent(bssid)}`
+        `http://192.168.1.96:8989/scan_devices?bssid=${encodeURIComponent(
+          bssid
+        )}`
       );
 
       if (!response.ok) {
